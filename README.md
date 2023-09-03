@@ -11,7 +11,7 @@ In this lab, we will set up a Virtual Machine (VM) and expose it to the internet
 - Microsoft Azure (Log Analytics Workspaces)
 - Microsoft Azure (Microsoft Sentinel [SIEM])
 - Microsoft Azure (Microsoft Defender for Cloud)
-- Powershell Script
+- Powershell & Custom [Powershell Script](https://github.com/joshmadakor1/Sentinel-Lab/blob/main/Custom_Security_Log_Exporter.ps1)
 - [IP Geo Location](https://ipgeolocation.io/)
 
 <h2>Operating Systems Used </h2>
@@ -102,7 +102,7 @@ In this lab, we will set up a Virtual Machine (VM) and expose it to the internet
 8. Observe the security event logs
 9. Particularly Event IDs 4625, as they represent failed logon attempts.
 
-### Turn VM Firewall Off
+### Turning the VM Firewall Off
 <img width="786" alt="image" src="https://i.imgur.com/jAqxpjz.png">
 
 1. Back on your PC, search and open cmd
@@ -119,26 +119,26 @@ In this lab, we will set up a Virtual Machine (VM) and expose it to the internet
 9. Back on your PC, observe cmd
 10. Ensure that ping is succesful then ctrl + c to stop ping
 
-### Using Powershell to Create Custon Logs
+### Using Powershell with IP Geolocation to Create Custom Logs
 <img width="786" alt="image" src="https://i.imgur.com/AMmdgy5.png">
 
-1. Back in the VM, open the browser
-2. Head to [Powershell Script](https://github.com/joshmadakor1/Sentinel-Lab/blob/main/Custom_Security_Log_Exporter.ps1) and copy the script
-3. Windows search Powershell ISE and open
-4. Click New Script then paste the script
-5. Click Save Script; save to Desktop as Log_Exporter
-6. Go to [IP Geo Location](https://ipgeolocation.io/) and create a free account
-7. Copy your unique API key
-8. Back in Powershell, look for $API_KEY
-9. Paste your unique API Key over the existing one
-10. Run the script
-11. Press Windows key + r then type C:\ProgramData\
-12. Open failed_rdp text file and copy everything
-13. Minimize the VM
-14. Back on your PC open Notepad and paste the logs
-15. Save to desktop and name it failed_rdp.log
+1. Back in the VM, open the browser.
+2. Head to [Powershell Script](https://github.com/joshmadakor1/Sentinel-Lab/blob/main/Custom_Security_Log_Exporter.ps1) and copy the script.
+3. Windows search for Powershell ISE and open it.
+4. Click "New Script" and then paste the script.
+5. Click "Save Script" and save it to the Desktop as "Log_Exporter."
+6. Go to [IP Geo Location](https://ipgeolocation.io/) and create a free account.
+7. Copy your unique API key.
+8. Back in Powershell, look for $API_KEY.
+9. Paste your unique API Key over the existing one.
+10. Run the script.
+11. Press the Windows key + R, then type "C:\ProgramData"
+12. Open the "failed_rdp" text file and copy everything.
+13. Minimize the VM.
+14. Back on your PC, open Notepad, and paste the logs.
+15. Save it to the desktop and name it "failed_rdp.log."
 
-### Using Powershell to Create Custon Logs
+### Synchronizing Logs Between LAW and the VM
 <img width="786" alt="image" src="https://i.imgur.com/MuVqzP4.png">
 
 1. Head back to [Azure Portal](https://portal.azure.com)
@@ -151,10 +151,30 @@ In this lab, we will set up a Virtual Machine (VM) and expose it to the internet
 4. Create Custom Log
 5. It will take a while for Log Analytics Workspace and the VM to synchronize; please allow 10-15 minutes
 
-### Using Powershell to Create Custon Logs
+### Configuring Sentinel for Attack Visualization
 <img width="786" alt="image" src="https://i.imgur.com/BEo3DuW.png">
 
-1. [Azure Portal](https://portal.azure.com)
+1. Head to [Azure Portal](https://portal.azure.com)
+2. Search Microsoft Sentinel > Workbooks
+3. Create new Workbook > Edit
+4. Remove 2 of the existing widgets
+5. Click Add > Add Query
+6. Head to [Query Script](https://github.com/jum4r/siem_workbook_script) and copy the whole script
+7. Paste the script in the Query then click Run Query
+8. In Visualization select Map
+9. Size select Full
+0. Configure Map Settings:
+   - Location Info: Latitude/Longitude
+   - Size by: event_count
+   - Metric Label: label
+   - Metric Value: event_count
+11. Apply then Save and close Map Settings
+2. Click Save on top:
+   - Title: Failed RDP World Map
+   - Location: West US 3
+13. Click Save then Done Editing
+14. Turn on Auto Refresh for 5 minutes. Save.
+
  
 
 
