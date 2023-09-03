@@ -18,14 +18,6 @@ In this lab, we will set up a Virtual Machine (VM) and expose it to the internet
 
 - Windows 10 (22H2)
 
-<h2>High-Level Steps</h2>
-
-- Note
-- Note
-- Note
-- Note
-- Note
-
 <h2>Setup</h2>
 
 ### Create a Free Azure Account
