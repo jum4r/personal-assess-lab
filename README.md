@@ -72,7 +72,7 @@ In this lab, we will set up a Virtual Machine (VM) and expose it to the internet
    - Data Collection: All Events
    - Save
 4. Head back to <b>Log Analytics Workspaces</b> > <b>Virtual Machines</b>.
-6. Click <b>vm-honeypot</b> then <b>Connect</b>.
+6. Click <b>vm-honeypot</b>, then <b>Connect</b>.
 
 ### Create Microsoft Sentinel (SIEM)
 <img width="500" height="500" alt="image" src="https://i.imgur.com/WIsYbkw.png">
