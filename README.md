@@ -3,7 +3,7 @@
 </p>
 
 <h1>Utilizing Security Information and Event Management (SIEM) for Geospatial Attack Data Visualization</h1>
-In this lab, we will set up a Virtual Machine (VM) and expose it to the internet. We will then set up the Log Analytics Workspace combined with Sentinel (SIEM) to map out attacks from different parts of the world.
+In this lab/tutorial, we will configure Azure Sentinel (SIEM) and establish a connection to a live Virtual Machine (VM) functioning as a honeypot. This configuration allows us to actively monitor and analyze real-time attacks, particularly focusing on RDP (Remote Desktop Protocol) brute force attempts originating from various locations worldwide. Additionally, we will leverage a custom PowerShell script to retrieve geolocation information about the attackers and visualize it on the Azure Sentinel Map for enhanced threat analysis.
 
 <h2>Environments and Technologies Used</h2>
 
@@ -11,8 +11,11 @@ In this lab, we will set up a Virtual Machine (VM) and expose it to the internet
 - Microsoft Azure (Log Analytics Workspaces)
 - Microsoft Azure (Microsoft Sentinel [SIEM])
 - Microsoft Azure (Microsoft Defender for Cloud)
-- Powershell & Custom [Powershell Script](https://github.com/joshmadakor1/Sentinel-Lab/blob/main/Custom_Security_Log_Exporter.ps1)
 - [IP Geo Location](https://ipgeolocation.io/)
+
+<h2>Environments and Technologies Used</h2>
+
+- Powershell & Custom [Powershell Script](https://github.com/joshmadakor1/Sentinel-Lab/blob/main/Custom_Security_Log_Exporter.ps1)
 
 <h2>Operating Systems Used </h2>
 
@@ -26,7 +29,7 @@ In this lab, we will set up a Virtual Machine (VM) and expose it to the internet
 1. Sign up: [Azure Free Account](https://azure.microsoft.com/en-us/free/)
 2. Login: [Azure Portal](https://portal.azure.com)
 
-### Create Vulnerable Virtual Machine (VM)
+### Create the Vulnerable Virtual Machine (VM)
 <img width="700" alt="image" src="https://i.imgur.com/9DOlkgo.png">
 
 1. Go to [Azure Portal](https://portal.azure.com).
