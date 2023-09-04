@@ -13,7 +13,7 @@ In this lab/tutorial, we will configure Azure Sentinel (SIEM) and establish a co
 - Microsoft Azure (Microsoft Defender for Cloud)
 - [IP Geo Location](https://ipgeolocation.io/)
 
-<h2>Environments and Technologies Used</h2>
+<h2>Language(s) Used</h2>
 
 - Powershell & Custom [Powershell Script](https://github.com/joshmadakor1/Sentinel-Lab/blob/main/Custom_Security_Log_Exporter.ps1)
 
@@ -101,21 +101,21 @@ In this lab/tutorial, we will configure Azure Sentinel (SIEM) and establish a co
 ### Turning the VM Firewall Off
 <img width="700" alt="image" src="https://i.imgur.com/jAqxpjz.png">
 
-1. Back on your PC, search and open <b>cmd</b>.
+1. Back on your PC, search and open <b>cmd</b> (Command Prompt).
 2. Type <b>ping -t (your vm public ip)</b>, to iniate non-stop ping.
 3. Return to the VM and search <b>wf.msc</b> to open the Firewall Settings.
 4. Click <b>Windows Defender Firewall Properties</b>
-5. Domain Profile tab
+5. Domain Profile tab:
    - Firewall State: Off
-6. Private Profile tab
+6. Private Profile tab:
    - Firewall State: Off
-7. Public Profile tab
+7. Public Profile tab:
    - Firewall State: Off
 8. Apply then OK.
-9. Back on your PC, observe cmd.
-10. Ensure that ping is succesful then press <b>ctrl + c</b> to stop ping.
+9. Back on your PC, observe the Command Prompt.
+10. Ensure that ping is succesful then press <b>ctrl</b> + <b>c</b> to stop ping.
 
-<h2>Configuring Logging Data for Visualization</h2>
+<h2>Configure Logging Data for Visualization</h2>
 
 ### Using Powershell with IP Geolocation to Create Custom Logs
 <img width="700" alt="image" src="https://i.imgur.com/AMmdgy5.png">
@@ -130,7 +130,7 @@ In this lab/tutorial, we will configure Azure Sentinel (SIEM) and establish a co
 8. Back in Powershell, look for <b>$API_KEY</b>.
 9. Paste your unique API Key over the existing one.
 10. Run the script.
-11. Press the Windows key + R, then type <b>C:\ProgramData</b>.
+11. Press the Windows key + R, enter <b>C:\ProgramData</b>.
 12. Open the <b>failed_rdp</b> text file and copy everything.
 13. Minimize the VM.
 14. Back on your PC, open Notepad, and paste the logs.
@@ -152,13 +152,13 @@ In this lab/tutorial, we will configure Azure Sentinel (SIEM) and establish a co
 ### Configuring Sentinel for Attack Visualization
 <img width="700" alt="image" src="https://i.imgur.com/BEo3DuW.png">
 
-1. Head to the [Azure Portal](https://portal.azure.com).
+1. After some time has passed, head to the [Azure Portal](https://portal.azure.com).
 2. Then <b>Microsoft Sentinel</b> > <b>Workbooks</b> > <b>Create new Workbook</b>
-3. Click <b>Edit</b> then remove both of the existing widgets.
+3. Click <b>Edit</b> and remove both of the existing widgets.
 4. Click <b>Add</b> > <b>Add Query</b>
 5. In a new tab, open [Github](https://github.com/jum4r/siem_workbook_script) and copy the entire script.
-6. Paste the script into the Query box, then click <b>Run Query</b>.
-7. In Query, Configure:
+6. Go back to the Query tab and paste the script into the Query box, then click <b>Run Query</b>.
+7. In Query, configure:
    - Visualization: Map
    - Size: Full
 8. Configure Map Settings:
@@ -179,8 +179,8 @@ In this lab/tutorial, we will configure Azure Sentinel (SIEM) and establish a co
 <img width="700" alt="image" src="https://i.imgur.com/6bmtAJ8.png">
 
 1. After a few hours, analyze the newly acquired data.
-2. Take a look at where the attacks are happening on the map. It's fascinating.
-4. You can change Map Settings to view data differently.
+2. Take a look at where the attacks are happening on the map. It's pretty fascinating.
+4. You can change Map Settings to view the data differently.
 5. You may leave it open for a few more hours, but please keep in mind that the IP Geolocation free account has a limit of 1000 requests. If you would like more requests there are payment options on their website.
 6. After you've finished, close the VM.
 
