@@ -21,13 +21,13 @@ In this lab, we will set up a Virtual Machine (VM) and expose it to the internet
 <h2>Setup</h2>
 
 ### Create a Free Azure Account
-<img width="786" alt="image" src="https://i.imgur.com/h1oEndK.png">
+<img width="700" alt="image" src="https://i.imgur.com/h1oEndK.png">
 
 1. Sign up: [Azure Free Account](https://azure.microsoft.com/en-us/free/)
 2. Login: [Azure Portal](https://portal.azure.com)
 
 ### Create Vulnerable Virtual Machine (VM)
-<img width="786" alt="image" src="https://i.imgur.com/9DOlkgo.png">
+<img width="700" alt="image" src="https://i.imgur.com/9DOlkgo.png">
 
 1. Go to [Azure Portal](https://portal.azure.com).
 2. Search for Virtual Machines and create a new Virtual Machine.
@@ -51,7 +51,7 @@ In this lab, we will set up a Virtual Machine (VM) and expose it to the internet
 4. Create the VM.
 
 ### Create Log Analytics Workspaces (LAW)
-<img width="786" alt="image" src="https://i.imgur.com/I7wUEho.png">
+<img width="700" alt="image" src="https://i.imgur.com/I7wUEho.png">
 
 1. Search for <b>Log Analytics Workspaces</b> and create new.
 2. Configure the LAW:
@@ -61,7 +61,7 @@ In this lab, we will set up a Virtual Machine (VM) and expose it to the internet
 3. Create the LAW.
 
 ### Configure Microsoft Defender for Cloud and Connect LAW to the VM
-<img width="786" alt="image" src="https://i.imgur.com/rIhqyGG.png">
+<img width="700" alt="image" src="https://i.imgur.com/rIhqyGG.png">
 
 1. Search for <b>Microsoft Defender for Cloud</b>.
 2. Navigate to <b>Environment Settings</b> > <b>Azure Subscriptions</b> > <b>law-honeypot</b>.
@@ -75,7 +75,7 @@ In this lab, we will set up a Virtual Machine (VM) and expose it to the internet
 6. Click <b>vm-honeypot</b> then <b>Connect</b>.
 
 ### Create Microsoft Sentinel (SIEM)
-<img width="786" alt="image" src="https://i.imgur.com/WIsYbkw.png">
+<img width="500" height="500" alt="image" src="https://i.imgur.com/WIsYbkw.png">
 
 1. Search for <b>Microsoft Sentinel</b> and create new.
 2. Select <b>law-honeypot</b> then <b>Add</b>.
@@ -83,7 +83,7 @@ In this lab, we will set up a Virtual Machine (VM) and expose it to the internet
 <h2>Configuring the Virtual Machine as a Honeypot</h2>
 
 ### Log into the VM & Observe Event Viewer Logs
-<img width="786" alt="image" src="https://i.imgur.com/LN4a8qE.png">
+<img width="700" alt="image" src="https://i.imgur.com/LN4a8qE.png">
 
 1. Navigate to <b>Virtual Machines</b> > <b>vm-honeypot</b>.
 2. Copy the Public IP address.
@@ -96,7 +96,7 @@ In this lab, we will set up a Virtual Machine (VM) and expose it to the internet
 9. Particularly <b>Event IDs 4625</b>, as they represent failed logon attempts.
 
 ### Turning the VM Firewall Off
-<img width="786" alt="image" src="https://i.imgur.com/jAqxpjz.png">
+<img width="700" alt="image" src="https://i.imgur.com/jAqxpjz.png">
 
 1. Back on your PC, search and open <b>cmd</b>.
 2. Type <b>ping -t (your vm public ip)</b>, to iniate non-stop ping.
@@ -115,7 +115,7 @@ In this lab, we will set up a Virtual Machine (VM) and expose it to the internet
 <h2>Configuring Logging Data for Visualization</h2>
 
 ### Using Powershell with IP Geolocation to Create Custom Logs
-<img width="786" alt="image" src="https://i.imgur.com/AMmdgy5.png">
+<img width="700" alt="image" src="https://i.imgur.com/AMmdgy5.png">
 
 1. Back in the VM, open the browser.
 2. Head to [Github](https://github.com/joshmadakor1/Sentinel-Lab/blob/main/Custom_Security_Log_Exporter.ps1) and copy the script.
@@ -134,20 +134,20 @@ In this lab, we will set up a Virtual Machine (VM) and expose it to the internet
 15. Save it to the desktop and name it <b>failed_rdp.log</b>
 
 ### Synchronizing Logs Between LAW and the VM
-<img width="786" alt="image" src="https://i.imgur.com/MuVqzP4.png">
+<img width="500" height="500" alt="image" src="https://i.imgur.com/MuVqzP4.png">
 
 1. Head back to [Azure Portal](https://portal.azure.com)
-2. Search <b>Log Analytics Workspaces</b> > <b>law-honeypot</b>
+2. Go to <b>Log Analytics Workspaces</b> > <b>law-honeypot</b>
 3. Navigate to <b>Tables</b> > <b>Create custom log</b>
-   - Sample Log: Point it to the failed_rdp.log
+   - Sample Log: Point it to the <b>failed_rdp.log</b>
    - Record Delimiter: New line
-   - Collection Path: Windows; C:\ProgramData\failed_rdp.log
+   - Collection Path: Windows; <b>C:\ProgramData\failed_rdp.log</b>
    - Custom Log Name: FAILED_RDP_WITH_GEO
 4. Create Custom Log
-5. It will take a while for Log Analytics Workspace and the VM to synchronize; please allow 10-15 minutes
+5. It will take a while for Log Analytics Workspace and the VM to synchronize; please allow 10-15 minutes.
 
 ### Configuring Sentinel for Attack Visualization
-<img width="786" alt="image" src="https://i.imgur.com/BEo3DuW.png">
+<img width="700" alt="image" src="https://i.imgur.com/BEo3DuW.png">
 
 1. Head to the [Azure Portal](https://portal.azure.com).
 2. Then <b>Microsoft Sentinel</b> > <b>Workbooks</b> > <b>Create new Workbook</b>
@@ -173,7 +173,7 @@ In this lab, we will set up a Virtual Machine (VM) and expose it to the internet
 14. It might take a while before some login attempts occur, so you can leave and return in a few hours.
 
 <h2>Monitoring Real-Time Global Cyberattacks</h2>
-<img width="786" alt="image" src="https://i.imgur.com/6bmtAJ8.png">
+<img width="700" alt="image" src="https://i.imgur.com/6bmtAJ8.png">
 
 1. After a few hours, analyze the newly acquired data.
 2. Take a look at where the attacks are happening on the map. It's fascinating.
@@ -184,12 +184,13 @@ In this lab, we will set up a Virtual Machine (VM) and expose it to the internet
 <h2>Cleanup</h2>
 
 ### Deleting Resource Groups
-<img width="786" alt="image" src="https://i.imgur.com/W6MxJTI.png">
+<img width="700" alt="image" src="https://i.imgur.com/W6MxJTI.png">
 
 1. Go back to [Azure Portal](https://portal.azure.com) and navigate to <b>Resource Groups</b>
 2. Select <b>RG-Honeypot</b> > <b>Delete resource group</b>
 3. Once it's finished, head back to <b>Resource Groups</b> > <b>NetworkWatcherRG</b> > <b>Delete resource group</b>.
-4. Refresh [Azure Portal](https://portal.azure.com) to ensure no resource groups are left. Congratulations, we've finished!
+4. Refresh/Revisit [Azure Portal](https://portal.azure.com) to ensure no resource groups are left.
+5. Congratulations, we've finished!
 
  
 
