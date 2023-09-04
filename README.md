@@ -83,7 +83,7 @@ In this lab/tutorial, we will configure Azure Sentinel (SIEM) and establish a co
 1. Search for <b>Microsoft Sentinel</b> and create new.
 2. Select <b>law-honeypot</b> then <b>Add</b>.
 
-<h2>Configuring the Virtual Machine as a Honeypot</h2>
+<h2>Configure the Virtual Machine as a Honeypot</h2>
 
 ### Log into the VM & Observe Event Viewer Logs
 <img width="700" alt="image" src="https://i.imgur.com/LN4a8qE.png">
@@ -175,14 +175,16 @@ In this lab/tutorial, we will configure Azure Sentinel (SIEM) and establish a co
 13. Leave the VM open with PowerShell still running its script.
 14. It might take a while before some login attempts occur, so you can leave and return in a few hours.
 
-<h2>Monitoring Real-Time Global Cyberattacks</h2>
+<h2>Final Observations</h2>
+
+### Monitoring Real-Time Global Cyberattacks
 <img width="700" alt="image" src="https://i.imgur.com/6bmtAJ8.png">
 
 1. After a few hours, analyze the newly acquired data.
-2. Take a look at where the attacks are happening on the map. It's pretty fascinating.
+2. Observe the attacks and where they're coming from on the map. It's quite fascinating.
 4. You can change Map Settings to view the data differently.
-5. You may leave it open for a few more hours, but please keep in mind that the IP Geolocation free account has a limit of 1000 requests. If you would like more requests there are payment options on their website.
-6. After you've finished, close the VM.
+5. You may leave it open for a few more hours, but bear in mind that the IP Geolocation free account has a daily limit of 1000 requests. If you would like more requests, you can find payment options on their website.
+7. After you've finished, close the VM.
 
 <h2>Cleanup</h2>
 
