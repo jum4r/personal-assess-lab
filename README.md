@@ -2,7 +2,7 @@
 <img width="450" height="250" src="https://i.imgur.com/njQs1EI.png" alt="SIEM Traffic"/>
 </p>
 
-<h1>Utilizing Security Information and Event Management (SIEM) for Geospatial Attack Data Visualization</h1>
+<h1>Mapping Cyber Threats with SIEM: A Geospatial Adventure</h1>
 In this lab/tutorial, we will configure Azure Sentinel (SIEM) and establish a connection to a live Virtual Machine (VM) functioning as a honeypot. This configuration allows us to actively monitor and analyze real-time attacks, particularly focusing on RDP (Remote Desktop Protocol) brute force attempts originating from various locations worldwide. Additionally, we will leverage a custom PowerShell script to retrieve geolocation information about the attackers and visualize it on the Azure Sentinel Map for enhanced threat analysis.
 
 <h2>Environments and Technologies Used</h2>
